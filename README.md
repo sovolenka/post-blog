@@ -4,9 +4,9 @@
 
 ## Run with Docker Compose
 - add `.env` file to the root directory and set the following variables:
-  - APP_PORT
-  - MONGO_INITDB_ROOT_HOSTNAME
-  - MONGO_INITDB_ROOT_PORT
+  - APP_PORT=???
+  - MONGO_INITDB_ROOT_HOSTNAME=???
+  - MONGO_INITDB_ROOT_PORT=???
   - APP_MONGO_HOST=db
 
 - Build the image
@@ -19,7 +19,9 @@ docker compose up
 ```
 
 ## Run with Node.js
-### In this case, you need to have your database already working. Just create the `.env` file as mentioned in the previous instruction and run the command:
+### In this case, you need to have your database already working.
+You can edit the connection string in `config/db.js` file.
+### Run with command:
 ```sh
 node app.js
 ```
