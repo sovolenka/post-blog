@@ -1,0 +1,51 @@
+<%- include('./partials/header.ejs') %> <%- include('./partials/nav.ejs') %>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
+<body>
+  <div style="max-width: 520px; height: 600px; margin: 0 auto">
+    <h1><%=title%></h1>
+    <br />
+
+    <form method="POST" style="height: fit-content;">
+      <div class="mb-3">
+        <label for="inputTitle" class="form-label">Назва</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          id="inputTitle"
+          name="title"
+          value="<%=post.title%>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputAuthor" class="form-label">Автор</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          id="inputAuthor"
+          name="author"
+          value="<%=post.author%>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputDescription" class="form-label">Опис</label>
+        <textarea style="resize: none;"
+          required
+          type="text"
+          class="form-control"
+          id="inputDescription"
+          name="description"
+          cols="40"
+          rows="5"
+        >
+  <%=post.description%></textarea
+        >
+      </div>
+
+      <button type="submit" ><%=buttonName%></button>
+    </form>
+  </div>
+</body>
+<%- include('./partials/footer.ejs') %>

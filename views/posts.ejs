@@ -1,0 +1,45 @@
+<%- include('./partials/header.ejs') %> <%- include('./partials/nav.ejs') %>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
+<h1 style="text-align: center"><%=title%></h1>
+
+<div
+  class="info1"
+  style="
+    max-width: 80%;
+    margin: 1% auto 10% auto;
+    padding: 10px;
+    overflow-x:auto;
+    min-height: 900px;
+  "
+>
+  <table>
+    <tr>
+      <th style="padding: 5px 100px 5px 100px;">Назва</th>
+      <th style="padding: 5px 100px 5px 100px;">Автор</th>
+      <th style="padding: 5px 185px 5px 185px;">Опис</th>
+    </tr>
+    <% posts.forEach(post => { %>
+    <tr>
+      <td ><%= post.title %></td>
+      <td><%= post.author %></td>
+      <td><%= post.description %></td>
+      <!-- edit button; send POST to /edit-post/:id -->
+      <td>
+        <form action="/edit-post/<%= post._id %>" method="GET">
+          <button type="submit">Редагувати</button>
+        </form>
+      </td>
+      <td>
+        <form
+          action="/delete-post/<%= post._id %>"
+          method="POST"
+        >
+          <button type="submit">Видалити</button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </table>
+</div>
+<%- include('./partials/footer.ejs') %>
