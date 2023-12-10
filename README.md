@@ -2,7 +2,7 @@
 
 ## You can run application with Docker Compose or Node.js
 
-# Run with Docker Compose
+## Run with Docker Compose
 - add `.env` file to the root directory and set the following variables:
   - APP_PORT
   - MONGO_INITDB_ROOT_HOSTNAME
